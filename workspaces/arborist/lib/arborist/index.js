@@ -78,7 +78,7 @@ class Arborist extends Base {
       lockfileVersion: lockfileVersion(options.lockfileVersion),
     }
     // don't audit when run in a non-project location
-    this.options.audit = (options.location !== 'project') ? false : options.audit
+    this.options.audit = options.location === 'project' && options.audit
 
     this.replaceRegistryHost = this.options.replaceRegistryHost =
       (!this.options.replaceRegistryHost || this.options.replaceRegistryHost === 'npmjs') ?
